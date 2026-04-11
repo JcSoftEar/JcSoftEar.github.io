@@ -2,7 +2,7 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   workflow_dispatch:
 
 permissions:
@@ -29,6 +29,12 @@ jobs:
         with:
           hugo-version: '0.123.0'
           extended: true
+
+      - name: Clone Theme
+        run: |
+          if [ ! -d "themes/PaperMod" ]; then
+            git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+          fi
 
       - name: Build Hugo
         run: hugo --gc --minify
