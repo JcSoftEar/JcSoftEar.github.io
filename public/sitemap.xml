@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://JcSoftEar.github.io/about/</loc>
+    <lastmod>2026-04-11T18:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://JcSoftEar.github.io/</loc>
+    <lastmod>2026-04-11T18:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://JcSoftEar.github.io/posts/hello-world/</loc>
+    <lastmod>2026-04-11T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://JcSoftEar.github.io/posts/</loc>
+    <lastmod>2026-04-11T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://JcSoftEar.github.io/categories/</loc>
+  </url><url>
+    <loc>https://JcSoftEar.github.io/tags/</loc>
+  </url>
+</urlset>

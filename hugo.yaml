@@ -1,10 +1,13 @@
-baseURL = 'https://JcSoftEar.github.io/'
-languageCode = 'zh-cn'
-title = 'JcSoftEar 的博客'
-theme = "PaperMod"
+baseURL: https://JcSoftEar.github.io/
+languageCode: zh-cn
+title: JcSoftEar 的博客
+theme: PaperMod
 
-[build]
-  writeStats = true
+build:
+  writeStats: true
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
