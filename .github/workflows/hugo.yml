@@ -23,8 +23,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Clone PaperMod theme
-        run: git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+      - name: Download PaperMod theme
+        run: |
+          mkdir -p themes/PaperMod
+          curl -sL https://github.com/adityatelange/hugo-PaperMod/archive/refs/heads/main.tar.gz | tar -xz -C themes/ --strip-components=1
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
