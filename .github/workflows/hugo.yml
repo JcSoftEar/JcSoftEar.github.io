@@ -2,7 +2,7 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -21,23 +21,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: recursive
           fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.123.0'
-          extended: true
+          hugo-version: '0.152.2'
 
-      - name: Clone Theme
-        run: |
-          if [ ! -d "themes/PaperMod" ]; then
-            git clone https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-          fi
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Build Hugo
-        run: hugo --gc --minify
+        run: hugo --verbose
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
