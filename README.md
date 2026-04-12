@@ -1,2 +1,1 @@
-# JcSoftEar.github.io
-james blogs
+# JcSoftEar Blog
