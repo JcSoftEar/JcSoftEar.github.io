@@ -198,3 +198,24 @@ img, video { max-width: 100%; display: block; }
 
 /* ===== Main Content Area ===== */
 .content-area { min-width: 0; }
+
+/* ===== Site Hero ===== */
+.site-hero {
+  text-align: center;
+  padding: 60px 20px 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+.site-hero .site-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+.site-hero .site-slogan {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  letter-spacing: 0.03em;
+}

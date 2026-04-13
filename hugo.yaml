@@ -4,8 +4,9 @@ title: "此生余洁"
 theme: "mytheme"
 
 params:
-  author: "JcSoftEar"
-  description: "个人网站"
+  author: "James（应晔）"
+  description: "余生有洁，此生无憾"
+  slogan: "余生有洁，此生无憾"
   social:
     github: "JcSoftEar"
     email: "james@email.com"

@@ -2,7 +2,14 @@
 <section class="home-section">
   <div class="container home-layout">
     <div class="content-area">
+      {{ if .Site.Params.slogan }}
+      <div class="site-hero animate-in">
+        <h1 class="site-title">{{ .Site.Title }}</h1>
+        <p class="site-slogan">{{ .Site.Params.slogan }}</p>
+      </div>
+      {{ else }}
       <h1 class="page-title animate-in">博客</h1>
+      {{ end }}
       <div class="article-list">
         {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "post" "")) }}
         {{ range $paginator.Pages }}
