@@ -23,11 +23,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download PaperMod theme
-        run: |
-          mkdir -p themes/PaperMod
-          curl -sL https://github.com/adityatelange/hugo-PaperMod/archive/refs/heads/main.tar.gz | tar -xz -C themes/ --strip-components=1
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -42,7 +37,7 @@ jobs:
       - name: Restore template files
         run: |
           git stash
-          git checkout master -- public/*.html public/styles.css public/main.js 2>/dev/null || echo "No custom files to restore"
+          git checkout master -- public/*.html public/styles.css public/main.js 2>/dev/null || echo "No custom files"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,11 +1,9 @@
 baseURL: https://JcSoftEar.github.io/
 languageCode: zh-cn
 title: JcSoftEar 的博客
-theme: PaperMod
-
+theme: mytheme
 build:
   writeStats: true
-
 outputs:
   home:
     - HTML
