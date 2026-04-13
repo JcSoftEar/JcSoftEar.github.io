@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="portfolio-section">
+  <div class="container">
+    <h1 class="page-title animate-in">作品集</h1>
+    <div class="portfolio-filters animate-in">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      {{ range .Site.Params.portfolio_categories }}
+      <button class="filter-btn" data-filter="{{ . }}">{{ . }}</button>
+      {{ end }}
+    </div>
+    <div class="portfolio-grid">
+      {{ range where .Site.RegularPages "Type" "portfolio" }}
+      <div class="portfolio-card animate-in" data-category="{{ with .Params.category }}{{ . }}{{ end }}">
+        <div class="portfolio-media">
+          {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+          {{ with .Params.video }}<video src="{{ . }}" muted loop></video>{{ end }}
+          <div class="portfolio-overlay">
+            <div class="portfolio-preview">
+              {{ with .Params.preview }}<img src="{{ . }}" alt="preview">{{ end }}
+            </div>
+            <div class="portfolio-links">
+              {{ with .Params.link }}<a href="{{ . }}" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i> 查看</a>{{ end }}
+              {{ with .Params.repo }}<a href="{{ . }}" target="_blank" class="btn-link"><i class="fab fa-github"></i> 源码</a>{{ end }}
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3 class="portfolio-title">{{ .Title }}</h3>
+          {{ with .Params.category }}<span class="portfolio-category">{{ . }}</span>{{ end }}
+          {{ with .Params.description }}<p class="portfolio-desc">{{ . }}</p>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

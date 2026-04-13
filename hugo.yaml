@@ -1,11 +1,16 @@
-baseURL: https://JcSoftEar.github.io/
-languageCode: zh-cn
-title: JcSoftEar 的博客
-theme: mytheme
-build:
-  writeStats: true
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
+baseURL: "https://JcSoftEar.github.io/"
+languageCode: "zh-cn"
+title: "JcSoftEar"
+theme: "mytheme"
+
+params:
+  author: "JcSoftEar"
+  description: "个人网站"
+  social:
+    github: "JcSoftEar"
+    email: "james@email.com"
+  portfolio_categories: ["Web", "App", "Design"]
+
+markup:
+  highlight:
+    noClasses: false

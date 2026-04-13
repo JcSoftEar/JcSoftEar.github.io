@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">{{ .Site.Params.author | default "My Site" }}</a>
+    <nav class="nav" id="nav">
+      <a href="/">博客</a>
+      <a href="/portfolio/">作品集</a>
+      <a href="/resume/">简历</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>

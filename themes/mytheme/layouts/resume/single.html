@@ -1,0 +1,75 @@
+{{ define "main" }}
+<section class="resume-section">
+  <div class="container">
+    <h1 class="page-title animate-in">个人简历</h1>
+    <div class="resume-layout">
+      <!-- Sidebar Info -->
+      <aside class="resume-sidebar animate-in">
+        <div class="resume-avatar">
+          {{ with .Params.avatar }}<img src="{{ . }}" alt="avatar">{{ end }}
+        </div>
+        <div class="resume-contact">
+          <h3><i class="fas fa-address-card"></i> 联系方式</h3>
+          {{ with .Params.email }}<p><i class="fas fa-envelope"></i> {{ . }}</p>{{ end }}
+          {{ with .Params.phone }}<p><i class="fas fa-phone"></i> {{ . }}</p>{{ end }}
+          {{ with .Params.location }}<p><i class="fas fa-map-marker-alt"></i> {{ . }}</p>{{ end }}
+          {{ with .Params.github }}<p><i class="fab fa-github"></i> {{ . }}</p>{{ end }}
+        </div>
+        <div class="resume-skills">
+          <h3><i class="fas fa-code"></i> 技能</h3>
+          {{ range .Params.skills }}
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">{{ .name }}</span>
+              <span class="skill-value" data-target="{{ .level }}">0</span><span>%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" data-level="{{ .level }}"></div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </aside>
+      <!-- Main Timeline -->
+      <div class="resume-main">
+        <!-- Personal Info -->
+        <div class="resume-block animate-in">
+          <h2 class="resume-block-title"><i class="fas fa-user"></i> 个人简介</h2>
+          <p>{{ with .Params.summary }}{{ . }}{{ end }}</p>
+        </div>
+        <!-- Education -->
+        <div class="resume-block animate-in">
+          <h2 class="resume-block-title"><i class="fas fa-graduation-cap"></i> 教育背景</h2>
+          <div class="timeline">
+            {{ range .Params.education }}
+            <div class="timeline-item">
+              <div class="timeline-date">{{ .year }}</div>
+              <div class="timeline-content">
+                <h3>{{ .school }}</h3>
+                <p>{{ .degree }}</p>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        <!-- Experience -->
+        <div class="resume-block animate-in">
+          <h2 class="resume-block-title"><i class="fas fa-briefcase"></i> 工作经历</h2>
+          <div class="timeline">
+            {{ range .Params.experience }}
+            <div class="timeline-item">
+              <div class="timeline-date">{{ .period }}</div>
+              <div class="timeline-content">
+                <h3>{{ .company }}</h3>
+                <p class="timeline-role">{{ .role }}</p>
+                <p>{{ .description }}</p>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

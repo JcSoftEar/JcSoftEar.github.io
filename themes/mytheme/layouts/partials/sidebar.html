@@ -1,0 +1,33 @@
+{{ $categories := slice }}
+{{ range .Site.RegularPages }}
+  {{ with .Params.categories }}{{ $categories = $categories | append . }}{{ end }}
+{{ end }}
+{{ $uniqueCats := slice }}
+{{ range $categories }}{{ if not (in $uniqueCats .) }}{{ $uniqueCats = $uniqueCats | append . }}{{ end }}{{ end }}
+
+{{ $tags := slice }}
+{{ range .Site.RegularPages }}
+  {{ with .Params.tags }}{{ $tags = $tags | append . }}{{ end }}
+{{ end }}
+{{ $uniqueTags := slice }}
+{{ range $tags }}{{ if not (in $uniqueTags .) }}{{ $uniqueTags = $uniqueTags | append . }}{{ end }}{{ end }}
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-section">
+    <h3 class="sidebar-title">分类</h3>
+    <ul class="category-list">
+      <li><a href="/" class="{{ if eq ($.Paginator.PageNumber | printf "%d") 1 }}active{{ end }}">全部</a></li>
+      {{ range $uniqueCats }}
+      <li><a href="{{ "categories" | absURL }}/{{ . | urlize }}/" class="">{{ . }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+  <div class="sidebar-section">
+    <h3 class="sidebar-title">标签云</h3>
+    <div class="tag-cloud">
+      {{ range $uniqueTags }}
+      <a href="{{ "tags" | absURL }}/{{ . | urlize }}/" class="tag-item">{{ . }}</a>
+      {{ end }}
+    </div>
+  </div>
+</aside>

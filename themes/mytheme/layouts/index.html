@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="home-section">
+  <div class="container home-layout">
+    <div class="content-area">
+      <h1 class="page-title animate-in">博客</h1>
+      <div class="article-list">
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "post" "")) }}
+        {{ range $paginator.Pages }}
+        <article class="article-card animate-in" data-pageviews="{{ with .Params.views }}{{ . }}{{ else }}0{{ end }}">
+          <div class="article-meta">
+            <span class="article-date"><i class="far fa-calendar"></i> {{ .Date.Format "2006-01-02" }}</span>
+            {{ with .Params.categories }}
+            <span class="article-category"><i class="far fa-folder"></i> {{ range first 1 . }}{{ . }}{{ end }}</span>
+            {{ end }}
+            <span class="article-views"><i class="far fa-eye"></i> <span class="view-count">{{ with .Params.views }}{{ . }}{{ else }}0{{ end }}</span></span>
+          </div>
+          <h2 class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="article-summary">{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+          {{ with .Params.tags }}
+          <div class="article-tags">
+            {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+          </div>
+          {{ end }}
+        </article>
+        {{ end }}
+      </div>
+      {{ if gt $paginator.TotalPages 1 }}
+      <div class="pagination">
+        {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}" class="page-link">&laquo; 上一页</a>{{ end }}
+        <span class="page-info">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+        {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}" class="page-link">下一页 &raquo;</a>{{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{- partial "sidebar.html" . -}}
+  </div>
+</section>
+{{ end }}
