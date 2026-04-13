@@ -9,9 +9,9 @@
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="{{ .Site.BaseURL }}" {{ if eq .RelPermalink "/" }}class="active"{{ end }}>首页</a></li>
-      <li><a href="{{ .Site.BaseURL }}blog.html" {{ if eq .RelPermalink "/blog.html" }}class="active"{{ end }}>博客</a></li>
-      <li><a href="{{ .Site.BaseURL }}portfolio.html" {{ if eq .RelPermalink "/portfolio.html" }}class="active"{{ end }}>作品</a></li>
-      <li><a href="{{ .Site.BaseURL }}resume.html" {{ if eq .RelPermalink "/resume.html" }}class="active"{{ end }}>简历</a></li>
+      <li><a href="{{ .Site.BaseURL }}blog/" {{ if eq .RelPermalink "/blog/" }}class="active"{{ end }}>博客</a></li>
+      <li><a href="{{ .Site.BaseURL }}portfolio/" {{ if in "/portfolio/" .RelPermalink }}class="active"{{ end }}>作品</a></li>
+      <li><a href="{{ .Site.BaseURL }}resume/" {{ if in "/resume/" .RelPermalink }}class="active"{{ end }}>简历</a></li>
     </ul>
   </div>
 </nav>

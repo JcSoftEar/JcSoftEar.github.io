@@ -50,7 +50,7 @@
               {{ range first 5 (where .Site.RegularPages "Type" "blog") }}
               <li>
                 <a href="{{ .RelPermalink }}">
-                  <span class="rank">{{ .CurrentSection.Position }}</span>
+                  <span class="rank">{{ .Date.Year }}</span>
                   <span class="title">{{ .Title }}</span>
                 </a>
               </li>
@@ -82,7 +82,7 @@
                 <div class="post-meta">
                   <span class="category {{ .Params.category | default "tech" }}">{{ .Params.category | default "技术" }}</span>
                   <span class="tags">
-                    {{ range first 2 .Params.tags }}
+                    {{ with .Params.tags }}{{ range first 2 . }}{{ end }}
                     <span class="tag-small">{{ . }}</span>
                     {{ end }}
                   </span>
