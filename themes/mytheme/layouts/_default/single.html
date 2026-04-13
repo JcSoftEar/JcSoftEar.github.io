@@ -3,6 +3,38 @@
 <main class="blog-page">
   <div class="container">
     <div class="blog-layout">
+      <aside class="sidebar">
+        <div class="search-box">
+          <input type="text" placeholder="搜索文章..." id="searchInput">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="widget">
+          <h3 class="widget-title">分类</h3>
+          <ul class="category-list">
+            <li class="active" data-category="all"><span>全部</span><span class="count">{{ len (where $.Site.RegularPages "Type" "blog") }}</span></li>
+            {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+            <li data-category="{{ $name }}"><span>{{ $name }}</span><span class="count">{{ len $taxonomy }}</span></li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="widget">
+          <h3 class="widget-title">标签</h3>
+          <div class="tag-cloud">
+            {{ range first 20 (.Site.Taxonomies.tags.ByCount) }}
+            <span class="tag">{{ .Page.Title }}</span>
+            {{ end }}
+          </div>
+        </div>
+        <div class="widget">
+          <h3 class="widget-title">热门文章</h3>
+          <ul class="popular-posts">
+            {{ range first 5 (where .Site.RegularPages "Type" "blog") }}
+            <li><a href="{{ .RelPermalink }}"><span class="title">{{ .Title }}</span></a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </aside>
+
       <article class="post-detail">
         <header class="post-header animate-in">
           <h1 class="post-title">{{ .Title }}</h1>
@@ -20,8 +52,6 @@
           {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
         </div>
         {{ end }}
-        
-        <!-- 上下篇导航 -->
         <div class="post-nav">
           {{ with .PrevInSection }}
           <a href="{{ .RelPermalink }}" class="post-nav-item prev">
@@ -37,49 +67,6 @@
           {{ end }}
         </div>
       </article>
-
-      <aside class="sidebar">
-        <!-- 搜索 -->
-        <div class="search-box">
-          <input type="text" placeholder="搜索文章..." id="searchInput">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        </div>
-
-        <!-- 分类 -->
-        <div class="widget">
-          <h3 class="widget-title">分类</h3>
-          <ul class="category-list">
-            <li class="active" data-category="all"><span>全部</span><span class="count">{{ len (where $.Site.RegularPages "Type" "blog") }}</span></li>
-            {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-            <li data-category="{{ $name }}"><span>{{ $name }}</span><span class="count">{{ len $taxonomy }}</span></li>
-            {{ end }}
-          </ul>
-        </div>
-
-        <!-- 标签云 -->
-        <div class="widget">
-          <h3 class="widget-title">标签</h3>
-          <div class="tag-cloud">
-            {{ range first 20 (.Site.Taxonomies.tags.ByCount) }}
-            <span class="tag">{{ .Page.Title }}</span>
-            {{ end }}
-          </div>
-        </div>
-
-        <!-- 热门文章 -->
-        <div class="widget">
-          <h3 class="widget-title">热门文章</h3>
-          <ul class="popular-posts">
-            {{ range first 5 (where .Site.RegularPages "Type" "blog") }}
-            <li>
-              <a href="{{ .RelPermalink }}">
-                <span class="title">{{ .Title }}</span>
-              </a>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-      </aside>
     </div>
   </div>
 </main>
