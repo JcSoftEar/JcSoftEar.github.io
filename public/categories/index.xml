@@ -6,6 +6,21 @@
     <description>Recent content in Categories on 此生余洁</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Mon, 13 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.taogame.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>开源</title>
+      <link>https://blog.taogame.com/categories/%E5%BC%80%E6%BA%90/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://blog.taogame.com/categories/%E5%BC%80%E6%BA%90/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>散文</title>
+      <link>https://blog.taogame.com/categories/%E6%95%A3%E6%96%87/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://blog.taogame.com/categories/%E6%95%A3%E6%96%87/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,103 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Posts - 此生余洁</title>
-<meta name="description" content="余生有洁，此生无憾">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="/css/custom.css">
-</head>
-<body data-theme="light"><header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="logo">James（应晔）</a>
-    <nav class="nav" id="nav">
-      <a href="/">博客</a>
-      <a href="/portfolio/">作品集</a>
-      <a href="/resume/">简历</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fas fa-moon"></i>
-      </button>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <i class="fas fa-bars"></i>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="https://blog.taogame.com/" class="logo">
+      此生余洁
+      <span class="logo-slogan">余生有洁，此生无憾</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+      <span></span><span></span><span></span>
     </button>
-  </div>
-</header>
-<main class="main">
-<section class="list-section">
-  <div class="container home-layout">
-    <div class="content-area">
-      <h1 class="page-title animate-in">Posts</h1>
-      <div class="article-list">
-        
-        <article class="article-card animate-in" data-pageviews="0">
-          <div class="article-meta">
-            <span class="article-date"><i class="far fa-calendar"></i> 2026-04-11</span>
-            
-            <span class="article-views"><i class="far fa-eye"></i> <span class="view-count">0</span></span>
-          </div>
-          <h2 class="article-title"><a href="/posts/hello-world/">Hello World</a></h2>
-          <p class="article-summary"><h1 id="hello-world-">Hello World 🌍</h1>
-<p>欢迎访问我的博客！</p>
-<p>这是一个使用 Hugo + GitHub Pages 构建的静态博客。</p>
-<blockquote>
-<p>&ldquo;代码即生活，生活即代码。&rdquo;</p>
-</blockquote>
-<p>更多内容即将上线&hellip;</p></p>
-          
-        </article>
-        
-      </div>
-      
-    </div>
-
-  
-
-  
-
-
-
-
-
-
-  
-
-  
-
-
-
-
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-section">
-    <h3 class="sidebar-title">分类</h3>
-    <ul class="category-list">
-      <li><a href="/" class="">全部</a></li>
-      
+    <ul class="nav-links" id="navLinks">
+      <li><a href="https://blog.taogame.com/" >首页</a></li>
+      <li><a href="https://blog.taogame.com/blog.html" >博客</a></li>
+      <li><a href="https://blog.taogame.com/portfolio.html" >作品</a></li>
+      <li><a href="https://blog.taogame.com/resume.html" >简历</a></li>
     </ul>
   </div>
-  <div class="sidebar-section">
-    <h3 class="sidebar-title">标签云</h3>
-    <div class="tag-cloud">
-      
-    </div>
-  </div>
-</aside>
-</div>
-</section>
+</nav>
 
-  </main><footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-social">
-      
-      <a href="https://github.com/JcSoftEar" target="_blank"><i class="fab fa-github"></i></a>
-      
-      
-      <a href="mailto:james@email.com"><i class="fas fa-envelope"></i></a>
-      
+
+  <main class="blog-page">
+    <div class="container">
+      <header class="page-header">
+        <h1>博客</h1>
+        <p class="page-subtitle">记录思考，分享成长</p>
+      </header>
+
+      <div class="blog-layout">
+        
+        <aside class="sidebar">
+          
+          <div class="search-box">
+            <input type="text" placeholder="搜索文章..." id="searchInput">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+
+          
+          <div class="widget">
+            <h3 class="widget-title">分类</h3>
+            <ul class="category-list">
+              <li class="active" data-category="all">
+                <span>全部</span>
+                <span class="count">0</span>
+              </li>
+              
+              <li data-category="散文">
+                <span>散文</span>
+                <span class="count">1</span>
+              </li>
+              
+            </ul>
+          </div>
+
+          
+          <div class="widget">
+            <h3 class="widget-title">标签</h3>
+            <div class="tag-cloud">
+              
+              <span class="tag" data-tag="生活">生活</span>
+              
+              <span class="tag" data-tag="随笔">随笔</span>
+              
+            </div>
+          </div>
+
+          
+          <div class="widget">
+            <h3 class="widget-title">热门文章</h3>
+            <ul class="popular-posts">
+              
+            </ul>
+          </div>
+        </aside>
+
+        
+        <div class="posts-container">
+          <div class="posts-header">
+            <p class="results-count">共 <strong>0</strong> 篇文章</p>
+            <div class="sort-options">
+              <select id="sortSelect">
+                <option value="latest">最新优先</option>
+                <option value="popular">阅读量最高</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="posts-list" id="postsList">
+            
+          </div>
+
+          
+          
+          
+        </div>
+      </div>
     </div>
-    <p class="footer-copy">&copy; 2026 James（应晔）. All rights reserved.</p>
+  </main>
+
+  <footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 James Ying. All rights reserved.</p>
+    <p class="footer-links">
+      <a href="https://blog.taogame.com/">首页</a> · 
+      <a href="https://blog.taogame.com/blog/">博客</a> · 
+      <a href="https://blog.taogame.com/portfolio/">作品</a> · 
+      <a href="https://blog.taogame.com/resume/">简历</a>
+    </p>
   </div>
 </footer>
-<script src="/js/custom.js"></script>
-</body>
-</html>

@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>此生余洁</title>
-    <link>https://blog.taogame.com/</link>
-    <description>Recent content on 此生余洁</description>
+    <title>Blogs on 此生余洁</title>
+    <link>https://blog.taogame.com/blog/</link>
+    <description>Recent content in Blogs on 此生余洁</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 13 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.taogame.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>个人介绍</title>
-      <link>https://blog.taogame.com/about/</link>
-      <pubDate>Sat, 11 Apr 2026 18:30:00 +0800</pubDate>
-      <guid>https://blog.taogame.com/about/</guid>
-      <description>&lt;h1 id=&#34;-你好欢迎来到我的博客&#34;&gt;👋 你好，欢迎来到我的博客！&lt;/h1&gt;&#xA;&lt;p&gt;我是 &lt;strong&gt;JcSoftEar&lt;/strong&gt;，热爱技术与代码。&lt;/p&gt;&#xA;&lt;h2 id=&#34;-专注领域&#34;&gt;🎯 专注领域&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;软件开发&lt;/li&gt;&#xA;&lt;li&gt;开源项目&lt;/li&gt;&#xA;&lt;li&gt;技术分享&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-联系方式&#34;&gt;📬 联系方式&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;GitHub: &lt;a href=&#34;https://github.com/JcSoftEar&#34;&gt;JcSoftEar&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Blog: &lt;a href=&#34;https://JcSoftEar.github.io&#34;&gt;JcSoftEar.github.io&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;正在完善中&amp;hellip;&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
+    <atom:link href="https://blog.taogame.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>余生有洁</title>
       <link>https://blog.taogame.com/blog/%E4%BD%99%E7%94%9F%E6%9C%89%E6%B4%81/</link>

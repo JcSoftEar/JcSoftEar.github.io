@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开源作品 | 股票持仓分析系统 - James Ying</title>
+  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="https://blog.taogame.com/" class="logo">
+      此生余洁
+      <span class="logo-slogan">余生有洁，此生无憾</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="https://blog.taogame.com/" >首页</a></li>
+      <li><a href="https://blog.taogame.com/blog/" >博客</a></li>
+      <li><a href="https://blog.taogame.com/portfolio/" >作品</a></li>
+      <li><a href="https://blog.taogame.com/resume/" >简历</a></li>
+    </ul>
+  </div>
+</nav>
+
+  
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="https://blog.taogame.com/" class="logo">
+      此生余洁
+      <span class="logo-slogan">余生有洁，此生无憾</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="https://blog.taogame.com/" >首页</a></li>
+      <li><a href="https://blog.taogame.com/blog/" >博客</a></li>
+      <li><a href="https://blog.taogame.com/portfolio/" >作品</a></li>
+      <li><a href="https://blog.taogame.com/resume/" >简历</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="blog-page">
+  <div class="container">
+    <div class="blog-layout">
+      <aside class="sidebar">
+        <div class="search-box">
+          <input type="text" placeholder="搜索文章..." id="searchInput">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="widget">
+          <h3 class="widget-title">分类</h3>
+          <ul class="category-list">
+            <li class="active" data-category="all"><span>全部</span><span class="count">3</span></li>
+            
+            <li data-category="开源"><span>开源</span><span class="count">1</span></li>
+            
+            <li data-category="散文"><span>散文</span><span class="count">1</span></li>
+            
+          </ul>
+        </div>
+        <div class="widget">
+          <h3 class="widget-title">标签</h3>
+          <div class="tag-cloud">
+            
+            <span class="tag">Flask</span>
+            
+            <span class="tag">Python</span>
+            
+            <span class="tag">工具</span>
+            
+            <span class="tag">投资</span>
+            
+            <span class="tag">生活</span>
+            
+            <span class="tag">随笔</span>
+            
+          </div>
+        </div>
+        <div class="widget">
+          <h3 class="widget-title">热门文章</h3>
+          <ul class="popular-posts">
+            
+            <li><a href="/blog/%E4%BD%99%E7%94%9F%E6%9C%89%E6%B4%81/"><span class="title">余生有洁</span></a></li>
+            
+            <li><a href="/blog/portfolio-analysis-intro/"><span class="title">开源作品 | 股票持仓分析系统</span></a></li>
+            
+            <li><a href="/blog/hello-world/"><span class="title">Hello World</span></a></li>
+            
+          </ul>
+        </div>
+      </aside>
+
+      <article class="post-detail">
+        <header class="post-header animate-in">
+          <h1 class="post-title">开源作品 | 股票持仓分析系统</h1>
+          <div class="post-meta">
+            <span><i class="far fa-calendar"></i> 2026-04-13</span>
+            <span><i class="far fa-folder"></i> 开源</span>
+            <span><i class="far fa-eye"></i> <span class="view-count">0</span></span>
+          </div>
+        </header>
+        <div class="post-content animate-in">
+          <h1 id="-股票持仓分析系统">📊 股票持仓分析系统</h1>
+<p>今天分享一个最近写的工具——<strong>股票持仓分析系统</strong>。</p>
+<p>做投资的同学应该都有感受：用 Excel 记持仓麻烦，第三方 App 广告太多，数据还不一定准确。与其凑合，不如自己动手。</p>
+<h2 id="-功能一览">🎯 功能一览</h2>
+<h3 id="持仓管理">持仓管理</h3>
+<p>添加、编辑、删除股票持仓，支持字段：</p>
+<ul>
+<li>股票代码 / 名称</li>
+<li>持仓数量</li>
+<li>成本价</li>
+</ul>
+<p>所有修改都会生成<strong>操作日志</strong>，随时可查、可追溯。</p>
+<h3 id="实时价格更新">实时价格更新</h3>
+<p>手动一键更新所有持仓价格。系统在交易时间内自动执行，非交易时间会跳过，不会浪费资源。</p>
+<h3 id="盈亏分析">盈亏分析</h3>
+<p>自动计算：</p>
+<ul>
+<li><strong>总市值</strong> vs <strong>总成本</strong></li>
+<li><strong>总盈亏额</strong> + <strong>盈亏比例</strong></li>
+<li>个股盈亏明细</li>
+<li>仓位占比（哪只股仓位最重，一目了然）</li>
+</ul>
+<p>盈亏用颜色区分——<strong>红色代表盈利</strong>，绿色代表亏损。</p>
+<h3 id="报告生成">报告生成</h3>
+<p>一键生成 Markdown 格式持仓报告，可直接下载，方便存档或分享。</p>
+<h2 id="-技术栈">🛠 技术栈</h2>
+<ul>
+<li><strong>Python</strong> — 核心逻辑</li>
+<li><strong>Flask</strong> — 轻量 Web API</li>
+<li><strong>SQLite</strong> — 数据持久化（无需额外部署数据库）</li>
+<li><strong>requests</strong> — 股票数据请求</li>
+</ul>
+<p>无依赖数据库，零配置，开箱即用。</p>
+<h2 id="-快速上手">🚀 快速上手</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">portfolio_system</span> <span class="kn">import</span> <span class="n">PortfolioManager</span><span class="p">,</span> <span class="n">start_server</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动 Web 服务器</span>
+</span></span><span class="line"><span class="cl"><span class="n">start_server</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">auto_update</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></div><p>然后浏览器打开 <code>http://localhost:5000</code>，管理界面就在那里。</p>
+<h2 id="-api-接口">📡 API 接口</h2>
+<p>不想用 Web 界面？也可以直接调 API：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 获取持仓</span>
+</span></span><span class="line"><span class="cl">curl http://localhost:5000/api/portfolio
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加持仓</span>
+</span></span><span class="line"><span class="cl">curl -X POST http://localhost:5000/api/portfolio/add <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -H <span class="s2">&#34;Content-Type: application/json&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -d <span class="s1">&#39;{&#34;symbol&#34;:&#34;600519&#34;,&#34;name&#34;:&#34;贵州茅台&#34;,&#34;quantity&#34;:100,&#34;cost_price&#34;:1800}&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新价格</span>
+</span></span><span class="line"><span class="cl">curl -X POST http://localhost:5000/api/portfolio/update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成报告</span>
+</span></span><span class="line"><span class="cl">curl http://localhost:5000/api/portfolio/report
+</span></span></code></pre></div><h2 id="-数据精度">⚙️ 数据精度</h2>
+<p>所有价格计算精确到 <strong>4 位小数</strong>，避免累积误差。系统会自动处理上海/深圳/创业板股票代码。</p>
+<h2 id="-待完善">📌 待完善</h2>
+<p>目前还是 MVP 阶段，欢迎 Star 和 PR：</p>
+<ul>
+<li>支持基金、ETF</li>
+<li>支持多账号管理</li>
+<li>图表可视化</li>
+</ul>
+<hr>
+<p>代码即生活，生活即代码。有兴趣的朋友可以研究研究，源码稍后公开。</p>
+<p><em>以上仅为个人投资记录分享，不构成投资建议。</em></p>
+
+        </div>
+        
+        <div class="post-tags">
+          <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">投资</span><span class="tag">工具</span>
+        </div>
+        
+        <div class="post-nav">
+          
+          <a href="/blog/hello-world/" class="post-nav-item prev">
+            <span>← 上一篇</span>
+            <span>Hello World</span>
+          </a>
+          
+          
+          <a href="/blog/%E4%BD%99%E7%94%9F%E6%9C%89%E6%B4%81/" class="post-nav-item next">
+            <span>下一篇 →</span>
+            <span>余生有洁</span>
+          </a>
+          
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+  <footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 James Ying. All rights reserved.</p>
+    <p class="footer-links">
+      <a href="https://blog.taogame.com/">首页</a> · 
+      <a href="https://blog.taogame.com/blog/">博客</a> · 
+      <a href="https://blog.taogame.com/portfolio/">作品</a> · 
+      <a href="https://blog.taogame.com/resume/">简历</a>
+    </p>
+  </div>
+</footer>
+  <script src="/js/custom.js"></script>
+</body>
+</html>
