@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .Title }}{{ .Title }} - {{ .Site.Params.author | default "Hason" }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+  <title>{{ if .Title }}{{ .Title }} - {{ .Site.Params.author | default "James Ying" }}{{ else }}{{ .Site.Title }}{{ end }}</title>
   <link rel="stylesheet" href="/css/custom.css">
 </head>
 <body>
+  {{ partial "header.html" . }}
   {{ block "main" . }}{{ end }}
+  {{ partial "footer.html" . }}
   <script src="/js/custom.js"></script>
 </body>
 </html>
