@@ -1,5 +1,4 @@
-{{ partial "header.html" . }}
-
+{{ define "main" }}
   <main class="portfolio-page">
     <div class="container">
       <header class="page-header">
@@ -7,7 +6,6 @@
         <p class="page-subtitle">精选项目，品质呈现</p>
       </header>
 
-      <!-- 筛选栏 -->
       <div class="filter-bar">
         <button class="filter-btn active" data-filter="all">全部</button>
         <button class="filter-btn" data-filter="web">Web应用</button>
@@ -16,7 +14,6 @@
         <button class="filter-btn" data-filter="design">设计作品</button>
       </div>
 
-      <!-- 作品网格 -->
       <div class="portfolio-grid" id="portfolioGrid">
         {{ range where .Site.RegularPages "Type" "portfolio" }}
         <div class="portfolio-item" data-category="{{ .Params.filter | default "web" }}">
@@ -55,7 +52,6 @@
         {{ end }}
       </div>
 
-      <!-- 项目详情模态框 -->
       <div class="modal" id="projectModal">
         <div class="modal-backdrop"></div>
         <div class="modal-content">
@@ -93,5 +89,4 @@
 
     </div>
   </main>
-
-  {{ partial "footer.html" . }}
+{{ end }}

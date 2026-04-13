@@ -1,0 +1,6 @@
+hugo.exe
+/public/.
+.hugo_build.lock
+resources/
+public/sitemap.xml
+public/about/
