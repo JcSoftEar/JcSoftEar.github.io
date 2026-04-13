@@ -1,16 +1,14 @@
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="logo">{{ .Site.Params.author | default "My Site" }}</a>
-    <nav class="nav" id="nav">
-      <a href="/">博客</a>
-      <a href="/portfolio/">作品集</a>
-      <a href="/resume/">简历</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <i class="fas fa-moon"></i>
-      </button>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <i class="fas fa-bars"></i>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="{{ .Site.BaseURL }}" class="logo">{{ .Site.Params.author | default "Hason" }}</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+      <span></span><span></span><span></span>
     </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ .Site.BaseURL }}" {{ if eq .RelPermalink "/" }}class="active"{{ end }}>首页</a></li>
+      <li><a href="{{ .Site.BaseURL }}blog/" {{ if eq .RelPermalink "/blog/" }}class="active"{{ end }}>博客</a></li>
+      <li><a href="{{ .Site.BaseURL }}portfolio/" {{ if eq .RelPermalink "/portfolio/" }}class="active"{{ end }}>作品</a></li>
+      <li><a href="{{ .Site.BaseURL }}resume/" {{ if eq .RelPermalink "/resume/" }}class="active"{{ end }}>简历</a></li>
+    </ul>
   </div>
-</header>
+</nav>

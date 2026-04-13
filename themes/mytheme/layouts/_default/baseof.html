@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language.Lang }}">
+<html lang="zh-CN">
 <head>
-  {{- partial "head.html" . -}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .Title }}{{ .Title }} - {{ .Site.Params.author | default "Hason" }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+  <link rel="stylesheet" href="/css/custom.css">
 </head>
-<body data-theme="light">
-  {{- partial "header.html" . -}}
-  <main class="main">
-    {{- block "main" . }}{{- end }}
-  </main>
-  {{- partial "footer.html" . -}}
+<body>
+  {{ block "main" . }}{{ end }}
   <script src="/js/custom.js"></script>
 </body>
 </html>

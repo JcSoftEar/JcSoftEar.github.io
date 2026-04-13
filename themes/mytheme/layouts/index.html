@@ -1,45 +1,111 @@
 {{ define "main" }}
-<section class="home-section">
-  <div class="container home-layout">
-    <div class="content-area">
-      {{ if .Site.Params.slogan }}
-      <div class="site-hero animate-in">
-        <h1 class="site-title">{{ .Site.Title }}</h1>
-        <p class="site-slogan">{{ .Site.Params.slogan }}</p>
+{{ partial "header.html" . }}
+
+  <!-- 首页英雄区 -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="avatar">
+        <div class="avatar-placeholder">{{ substr (.Site.Params.author | default "Hason") 0 1 }}</div>
       </div>
-      {{ else }}
-      <h1 class="page-title animate-in">博客</h1>
-      {{ end }}
-      <div class="article-list">
-        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" (slice "post" "")) }}
-        {{ range $paginator.Pages }}
-        <article class="article-card animate-in" data-pageviews="{{ with .Params.views }}{{ . }}{{ else }}0{{ end }}">
-          <div class="article-meta">
-            <span class="article-date"><i class="far fa-calendar"></i> {{ .Date.Format "2006-01-02" }}</span>
-            {{ with .Params.categories }}
-            <span class="article-category"><i class="far fa-folder"></i> {{ range first 1 . }}{{ . }}{{ end }}</span>
-            {{ end }}
-            <span class="article-views"><i class="far fa-eye"></i> <span class="view-count">{{ with .Params.views }}{{ . }}{{ else }}0{{ end }}</span></span>
+      <h1>你好，我是 <span class="highlight">{{ .Site.Params.author | default "汉森" }}</span></h1>
+      <p class="tagline">{{ .Site.Params.tagline | default "全栈开发者 · 设计师 · 终身学习者" }}</p>
+      <div class="social-links">
+        {{ with .Site.Params.social.github }}
+        <a href="{{ . }}" class="social-link" title="GitHub">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        {{ end }}
+        {{ with .Site.Params.social.twitter }}
+        <a href="{{ . }}" class="social-link" title="Twitter">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        {{ end }}
+        {{ with .Site.Params.social.email }}
+        <a href="mailto:{{ . }}" class="social-link" title="邮箱">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </header>
+
+  <!-- 统计区 -->
+  <section class="stats">
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number" data-target="{{ .Site.Params.stats.articles | default 52 }}">0</span>
+        <span class="stat-label">文章</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="{{ .Site.Params.stats.works | default 28 }}">0</span>
+        <span class="stat-label">作品</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="{{ .Site.Params.stats.views | default 12800 }}">0</span>
+        <span class="stat-label">阅读量</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="{{ .Site.Params.stats.projects | default 5 }}">0</span>
+        <span class="stat-label">项目</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最新文章预览 -->
+  <section class="section recent-posts">
+    <div class="container">
+      <h2 class="section-title">最新文章</h2>
+      <div class="posts-grid">
+        {{ range first 3 (where .Site.RegularPages "Type" "blog") }}
+        <article class="post-card">
+          <div class="post-meta">
+            <span class="post-category">{{ .Params.category | default "技术" }}</span>
+            <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
           </div>
-          <h2 class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <p class="article-summary">{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
-          {{ with .Params.tags }}
-          <div class="article-tags">
-            {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+          <h3 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+          <p class="post-excerpt">{{ .Summary | truncate 80 }}</p>
+          <div class="post-footer">
+            <span class="read-count">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              {{ .Params.views | default "0" }}
+            </span>
+            <a href="{{ .RelPermalink }}" class="read-more">阅读更多 →</a>
           </div>
-          {{ end }}
         </article>
         {{ end }}
       </div>
-      {{ if gt $paginator.TotalPages 1 }}
-      <div class="pagination">
-        {{ if $paginator.HasPrev }}<a href="{{ $paginator.Prev.URL }}" class="page-link">&laquo; 上一页</a>{{ end }}
-        <span class="page-info">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
-        {{ if $paginator.HasNext }}<a href="{{ $paginator.Next.URL }}" class="page-link">下一页 &raquo;</a>{{ end }}
+      <div class="section-footer">
+        <a href="{{ .Site.BaseURL }}blog/" class="btn-outline">查看全部文章</a>
       </div>
-      {{ end }}
     </div>
-    {{- partial "sidebar.html" . -}}
-  </div>
-</section>
+  </section>
+
+  <!-- 精选作品 -->
+  <section class="section featured-works">
+    <div class="container">
+      <h2 class="section-title">精选作品</h2>
+      <div class="works-grid">
+        {{ range first 3 (where .Site.RegularPages "Type" "portfolio") }}
+        <div class="work-card{{ if eq .CurrentSection.Title "企业管理系统" }} large{{ end }}">
+          <div class="work-image">
+            <div class="work-placeholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </div>
+          </div>
+          <div class="work-info">
+            <span class="work-category">{{ .Params.category | default "Web应用" }}</span>
+            <h3>{{ .Title }}</h3>
+            <p>{{ .Params.tech | default "全栈开发" }}</p>
+            <a href="{{ .RelPermalink }}" class="work-link">查看详情 →</a>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <div class="section-footer">
+        <a href="{{ .Site.BaseURL }}portfolio/" class="btn-outline">查看全部作品</a>
+      </div>
+    </div>
+  </section>
+
+{{ partial "footer.html" . }}
 {{ end }}

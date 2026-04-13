@@ -1,35 +1,145 @@
-{{ define "main" }}
-<section class="list-section">
-  <div class="container home-layout">
-    <div class="content-area">
-      <h1 class="page-title animate-in">{{ .Title }}</h1>
-      <div class="article-list">
-        {{ range .Paginator.Pages }}
-        <article class="article-card animate-in" data-pageviews="{{ with .Params.views }}{{ . }}{{ else }}0{{ end }}">
-          <div class="article-meta">
-            <span class="article-date"><i class="far fa-calendar"></i> {{ .Date.Format "2006-01-02" }}</span>
-            {{ with .Params.categories }}
-            <span class="article-category"><i class="far fa-folder"></i> {{ range first 1 . }}{{ . }}{{ end }}</span>
-            {{ end }}
-            <span class="article-views"><i class="far fa-eye"></i> <span class="view-count">{{ with .Params.views }}{{ . }}{{ else }}0{{ end }}</span></span>
+{{ partial "header.html" . }}
+
+  <main class="blog-page">
+    <div class="container">
+      <header class="page-header">
+        <h1>博客</h1>
+        <p class="page-subtitle">记录思考，分享成长</p>
+      </header>
+
+      <div class="blog-layout">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+          <!-- 搜索 -->
+          <div class="search-box">
+            <input type="text" placeholder="搜索文章..." id="searchInput">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
           </div>
-          <h2 class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <p class="article-summary">{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
-          {{ with .Params.tags }}
-          <div class="article-tags">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>
+
+          <!-- 分类 -->
+          <div class="widget">
+            <h3 class="widget-title">分类</h3>
+            <ul class="category-list">
+              <li class="active" data-category="all">
+                <span>全部</span>
+                <span class="count">{{ len (where .Site.RegularPages "Type" "blog") }}</span>
+              </li>
+              {{ range .Site.Taxonomies.categories }}
+              <li data-category="{{ .Page.Title }}">
+                <span>{{ .Page.Title }}</span>
+                <span class="count">{{ .Count }}</span>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+
+          <!-- 标签云 -->
+          <div class="widget">
+            <h3 class="widget-title">标签</h3>
+            <div class="tag-cloud">
+              {{ range first 10 (.Site.Taxonomies.tags.ByCount) }}
+              <span class="tag" data-tag="{{ .Page.Title }}">{{ .Page.Title }}</span>
+              {{ end }}
+            </div>
+          </div>
+
+          <!-- 阅读排行 -->
+          <div class="widget">
+            <h3 class="widget-title">热门文章</h3>
+            <ul class="popular-posts">
+              {{ range first 5 (where .Site.RegularPages "Type" "blog") }}
+              <li>
+                <a href="{{ .RelPermalink }}">
+                  <span class="rank">{{ .CurrentSection.Position }}</span>
+                  <span class="title">{{ .Title }}</span>
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </aside>
+
+        <!-- 文章列表 -->
+        <div class="posts-container">
+          <div class="posts-header">
+            <p class="results-count">共 <strong>{{ len (where .Site.RegularPages "Type" "blog") }}</strong> 篇文章</p>
+            <div class="sort-options">
+              <select id="sortSelect">
+                <option value="latest">最新优先</option>
+                <option value="popular">阅读量最高</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="posts-list" id="postsList">
+            {{ range where .Site.RegularPages "Type" "blog" }}
+            <article class="post-item" data-category="{{ .Params.category | default "tech" }}">
+              <div class="post-date-badge">
+                <span class="month">{{ .Date.Format "Jan" }}</span>
+                <span class="day">{{ .Date.Format "02" }}</span>
+              </div>
+              <div class="post-content">
+                <div class="post-meta">
+                  <span class="category {{ .Params.category | default "tech" }}">{{ .Params.category | default "技术" }}</span>
+                  <span class="tags">
+                    {{ range first 2 .Params.tags }}
+                    <span class="tag-small">{{ . }}</span>
+                    {{ end }}
+                  </span>
+                </div>
+                <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+                <p class="post-excerpt">{{ .Summary | truncate 100 }}</p>
+                <div class="post-stats">
+                  <span class="stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    {{ .Params.views | default 0 }}
+                  </span>
+                  <span class="stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    {{ .Params.comments | default 0 }}
+                  </span>
+                  <span class="stat">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                    {{ .Params.likes | default 0 }}
+                  </span>
+                </div>
+              </div>
+            </article>
+            {{ end }}
+          </div>
+
+          <!-- 分页 -->
+          {{ $paginator := .Paginate (where .Site.RegularPages "Type" "blog") 10 }}
+          {{ if gt $paginator.TotalPages 1 }}
+          <div class="pagination">
+            {{ if $paginator.HasPrev }}
+            <button class="page-btn prev">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            {{ else }}
+            <button class="page-btn prev" disabled>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            {{ end }}
+            
+            {{ range $paginator.Pagers }}
+            <button class="page-btn{{ if eq .PageNumber $paginator.PageNumber }} active{{ end }}">{{ .PageNumber }}</button>
+            {{ end }}
+            
+            {{ if $paginator.HasNext }}
+            <button class="page-btn next">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            {{ else }}
+            <button class="page-btn next" disabled>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+            {{ end }}
+          </div>
           {{ end }}
-        </article>
-        {{ end }}
+        </div>
       </div>
-      {{ if gt .Paginator.TotalPages 1 }}
-      <div class="pagination">
-        {{ if .Paginator.HasPrev }}<a href="{{ .Paginator.Prev.URL }}" class="page-link">&laquo; 上一页</a>{{ end }}
-        <span class="page-info">{{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }}</span>
-        {{ if .Paginator.HasNext }}<a href="{{ .Paginator.Next.URL }}" class="page-link">下一页 &raquo;</a>{{ end }}
-      </div>
-      {{ end }}
     </div>
-    {{- partial "sidebar.html" . -}}
-  </div>
-</section>
-{{ end }}
+  </main>
+
+  {{ partial "footer.html" . }}

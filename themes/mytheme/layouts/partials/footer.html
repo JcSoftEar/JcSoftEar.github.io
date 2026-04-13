@@ -1,13 +1,11 @@
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-social">
-      {{ with .Site.Params.social.github }}
-      <a href="https://github.com/{{ . }}" target="_blank"><i class="fab fa-github"></i></a>
-      {{ end }}
-      {{ with .Site.Params.social.email }}
-      <a href="mailto:{{ . }}"><i class="fas fa-envelope"></i></a>
-      {{ end }}
-    </div>
-    <p class="footer-copy">&copy; {{ now.Year }} {{ .Site.Params.author }}. All rights reserved.</p>
+<footer class="footer">
+  <div class="container">
+    <p>&copy; {{ now.Year }} {{ .Site.Params.author | default "Hason" }}. All rights reserved.</p>
+    <p class="footer-links">
+      <a href="{{ .Site.BaseURL }}">首页</a> · 
+      <a href="{{ .Site.BaseURL }}blog/">博客</a> · 
+      <a href="{{ .Site.BaseURL }}portfolio/">作品</a> · 
+      <a href="{{ .Site.BaseURL }}resume/">简历</a>
+    </p>
   </div>
 </footer>
