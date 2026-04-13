@@ -2,20 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://JcSoftEar.github.io/about/</loc>
+    <loc>https://blog.taogame.com/about/</loc>
     <lastmod>2026-04-11T18:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://JcSoftEar.github.io/</loc>
+    <loc>https://blog.taogame.com/</loc>
     <lastmod>2026-04-11T18:30:00+08:00</lastmod>
   </url><url>
-    <loc>https://JcSoftEar.github.io/posts/hello-world/</loc>
+    <loc>https://blog.taogame.com/posts/hello-world/</loc>
     <lastmod>2026-04-11T18:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://JcSoftEar.github.io/posts/</loc>
+    <loc>https://blog.taogame.com/posts/</loc>
     <lastmod>2026-04-11T18:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://JcSoftEar.github.io/categories/</loc>
+    <loc>https://blog.taogame.com/categories/</loc>
   </url><url>
-    <loc>https://JcSoftEar.github.io/tags/</loc>
+    <loc>https://blog.taogame.com/tags/</loc>
   </url>
 </urlset>

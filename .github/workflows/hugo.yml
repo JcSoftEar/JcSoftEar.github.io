@@ -34,11 +34,6 @@ jobs:
       - name: Build Hugo
         run: hugo
 
-      - name: Restore template files
-        run: |
-          git stash
-          git checkout master -- public/*.html public/styles.css public/main.js 2>/dev/null || echo "No custom files"
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
