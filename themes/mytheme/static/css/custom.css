@@ -115,7 +115,7 @@ input, select, textarea {
 
 .nav-links a {
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #555;
   transition: var(--transition);
   position: relative;
 }
@@ -204,7 +204,7 @@ input, select, textarea {
 
 .tagline {
   font-size: 1.125rem;
-  color: var(--text-secondary);
+  color: #555;
   margin-bottom: 24px;
 }
 
@@ -222,7 +222,7 @@ input, select, textarea {
   justify-content: center;
   border-radius: 50%;
   background: var(--surface);
-  color: var(--text-secondary);
+  color: #555;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
@@ -266,7 +266,7 @@ input, select, textarea {
 
 .stat-label {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 /* ========================================
@@ -382,7 +382,7 @@ input, select, textarea {
 
 .post-excerpt {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #555;
   line-height: 1.6;
   margin-bottom: 16px;
   display: -webkit-box;
@@ -483,7 +483,7 @@ input, select, textarea {
 
 .work-info p {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 .work-link {
@@ -502,7 +502,7 @@ input, select, textarea {
   border-top: 1px solid var(--border);
   padding: 32px 0;
   text-align: center;
-  color: var(--text-secondary);
+  color: #555;
   font-size: 0.875rem;
 }
 
@@ -534,7 +534,7 @@ input, select, textarea {
 }
 
 .page-subtitle {
-  color: var(--text-secondary);
+  color: #555;
   font-size: 1.125rem;
 }
 
@@ -564,7 +564,7 @@ input, select, textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--text-secondary);
+  color: #555;
   margin-bottom: 16px;
 }
 
@@ -619,7 +619,7 @@ input, select, textarea {
   padding: 2px 8px;
   border-radius: 10px;
   font-size: 0.75rem;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 .tag-cloud {
@@ -633,7 +633,7 @@ input, select, textarea {
   background: var(--border-light);
   border-radius: 20px;
   font-size: 0.8125rem;
-  color: var(--text-secondary);
+  color: #555;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -693,7 +693,7 @@ input, select, textarea {
 }
 
 .results-count {
-  color: var(--text-secondary);
+  color: #555;
   font-size: 0.875rem;
 }
 
@@ -853,7 +853,7 @@ input, select, textarea {
   font-weight: 500;
   background: var(--surface);
   border: 1px solid var(--border);
-  color: var(--text-secondary);
+  color: #555;
   transition: var(--transition);
 }
 
@@ -980,7 +980,7 @@ input, select, textarea {
 
 .portfolio-info p {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 .portfolio-tags {
@@ -995,7 +995,7 @@ input, select, textarea {
   background: var(--border-light);
   border-radius: 4px;
   font-size: 0.75rem;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 /* 模态框 */
@@ -1069,7 +1069,7 @@ input, select, textarea {
 }
 
 .modal-description {
-  color: var(--text-secondary);
+  color: #555;
   margin-bottom: 24px;
   line-height: 1.7;
 }
@@ -1140,7 +1140,7 @@ input, select, textarea {
 }
 
 .resume-summary {
-  color: var(--text-secondary);
+  color: #555;
   line-height: 1.7;
   margin-bottom: 20px;
 }
@@ -1253,7 +1253,7 @@ input, select, textarea {
 
 .timeline-description li {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #555;
   line-height: 1.7;
   margin-bottom: 6px;
 }
@@ -1303,12 +1303,12 @@ input, select, textarea {
   background: var(--surface);
   border-radius: 4px;
   font-size: 0.75rem;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 .project-desc {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #555;
   line-height: 1.6;
 }
 
@@ -1338,7 +1338,7 @@ input, select, textarea {
 
 .education-degree {
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #555;
   margin-bottom: 4px;
 }
 
@@ -1368,7 +1368,7 @@ input, select, textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--text-secondary);
+  color: #555;
   margin-bottom: 16px;
   padding-bottom: 12px;
   border-bottom: 2px solid var(--border-light);
@@ -1436,7 +1436,7 @@ input, select, textarea {
   background: var(--border-light);
   border-radius: 20px;
   font-size: 0.8125rem;
-  color: var(--text-secondary);
+  color: #555;
   transition: var(--transition);
 }
 
@@ -1463,7 +1463,7 @@ input, select, textarea {
   padding-left: 20px;
   margin-bottom: 10px;
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #555;
 }
 
 .awards-list li::before {
@@ -1674,9 +1674,9 @@ input, select, textarea {
 }
 
 .logo-slogan {
-  font-size: 0.55em;
+  font-size: 12px;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: #555;
   margin-left: 8px;
   letter-spacing: 0.03em;
 }
