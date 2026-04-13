@@ -32,7 +32,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build Hugo
-        run: hugo --verbose
+        run: hugo
 
       - name: Restore template files
         run: |
