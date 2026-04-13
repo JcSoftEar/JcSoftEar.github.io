@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品集 - Hason</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Hason</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="blog.html">博客</a></li>
+        <li><a href="portfolio.html" class="active">作品</a></li>
+        <li><a href="resume.html">简历</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="portfolio-page">
+    <div class="container">
+      <header class="page-header">
+        <h1>作品集</h1>
+        <p class="page-subtitle">精选项目，品质呈现</p>
+      </header>
+
+      <!-- 筛选栏 -->
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">全部</button>
+        <button class="filter-btn" data-filter="web">Web应用</button>
+        <button class="filter-btn" data-filter="mobile">移动应用</button>
+        <button class="filter-btn" data-filter="component">组件库</button>
+        <button class="filter-btn" data-filter="design">设计作品</button>
+      </div>
+
+      <!-- 作品网格 -->
+      <div class="portfolio-grid" id="portfolioGrid">
+        
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-image">
+            <div class="image-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <div class="project-links">
+                  <a href="#" class="project-link" title="在线预览">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </a>
+                  <a href="#" class="project-link" title="源代码">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-category">Web应用</span>
+            <h3>企业管理系统</h3>
+            <p>Vue3 + Element Plus + Node.js</p>
+            <div class="portfolio-tags">
+              <span>Vue 3</span>
+              <span>TypeScript</span>
+              <span>Node.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="mobile">
+          <div class="portfolio-image">
+            <div class="image-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <div class="project-links">
+                  <a href="#" class="project-link" title="App Store">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                  </a>
+                  <a href="#" class="project-link" title="源代码">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-category">移动应用</span>
+            <h3>社交App</h3>
+            <p>React Native + Firebase</p>
+            <div class="portfolio-tags">
+              <span>React Native</span>
+              <span>Firebase</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="component">
+          <div class="portfolio-image">
+            <div class="image-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <div class="project-links">
+                  <a href="#" class="project-link" title="文档">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                  </a>
+                  <a href="#" class="project-link" title="源代码">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-category">组件库</span>
+            <h3>UI组件库</h3>
+            <p>TypeScript + Storybook</p>
+            <div class="portfolio-tags">
+              <span>TypeScript</span>
+              <span>Storybook</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="web">
+          <div class="portfolio-image">
+            <div class="image-placeholder has-video">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            </div>
+            <div class="video-badge">视频</div>
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <div class="project-links">
+                  <a href="#" class="project-link" title="播放视频">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </a>
+                  <a href="#" class="project-link" title="源代码">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-category">Web应用</span>
+            <h3>在线视频平台</h3>
+            <p>Next.js + Prisma + PostgreSQL</p>
+            <div class="portfolio-tags">
+              <span>Next.js</span>
+              <span>Prisma</span>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="design">
+          <div class="portfolio-image">
+            <div class="image-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <div class="project-links">
+                  <a href="#" class="project-link" title="查看大图">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-category">设计作品</span>
+            <h3>品牌视觉设计</h3>
+            <p>Figma + Photoshop</p>
+            <div class="portfolio-tags">
+              <span>品牌</span>
+              <span>VI设计</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-category="mobile">
+          <div class="portfolio-image">
+            <div class="image-placeholder">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            </div>
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <div class="project-links">
+                  <a href="#" class="project-link" title="Google Play">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 10.85c-.5-.24-.84-.76-.84-1.35zm13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27zm3.35-4.31c.34.27.34.7 0 1.09l-2.1 3.81c-.34.63-1.03.98-1.7.98H10.5c-.67 0-1.36-.35-1.7-.98L6.7 11.1c-.34-.39-.34-.82 0-1.09l2.1-3.81c.34-.63 1.03-.98 1.7-.98h3.8c.67 0 1.36.35 1.7.98l2.1 3.81zM14.3 7.5l-2.1 3.81c-.17.31-.52.5-.89.5H7.89c-.37 0-.72-.19-.89-.5l-2.1-3.81c-.17-.31-.05-.56.19-.72.25-.15.56-.06.77.2l2.03 3.68c.34.63 1.03.98 1.7.98h2.8c.67 0 1.36-.35 1.7-.98l2.03-3.68c.21-.26.52-.35.77-.2.24.16.36.41.19.72z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-category">移动应用</span>
+            <h3>健身追踪App</h3>
+            <p>Flutter + Riverpod</p>
+            <div class="portfolio-tags">
+              <span>Flutter</span>
+              <span>Riverpod</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 项目详情模态框 -->
+      <div class="modal" id="projectModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+          <div class="modal-body">
+            <div class="modal-image">
+              <div class="image-placeholder large">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+            </div>
+            <div class="modal-info">
+              <span class="modal-category">Web应用</span>
+              <h2>企业管理系统</h2>
+              <p class="modal-description">一个功能完善的企业级SaaS管理平台，支持多租户架构、权限管理、数据可视化等功能。</p>
+              <div class="modal-tech">
+                <h4>技术栈</h4>
+                <div class="tech-tags">
+                  <span>Vue 3</span>
+                  <span>TypeScript</span>
+                  <span>Element Plus</span>
+                  <span>Node.js</span>
+                  <span>PostgreSQL</span>
+                </div>
+              </div>
+              <div class="modal-links">
+                <a href="#" class="btn-primary">在线演示</a>
+                <a href="#" class="btn-outline">源代码</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Hason. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
