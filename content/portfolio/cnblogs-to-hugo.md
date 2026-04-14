@@ -8,12 +8,12 @@ category: "工具软件"
 tech: "Python · tkinter · BeautifulSoup"
 tags: ["Python", "Hugo", "博客园", "GUI", "工具"]
 github: "https://github.com/JcSoftEar/cnblogs-to-hugo"
-image: "/images/cnblogs-to-hugo.jpg"
+image: "images/cnblogs-to-hugo.jpg"
 ---
 
 # cnblogs-to-hugo
 
-![cnblogs-to-hugo 界面截图](/images/cnblogs-to-hugo.jpg)
+![cnblogs-to-hugo 界面截图](../images/cnblogs-to-hugo.jpg)
 
 博客园文章批量迁移到 Hugo 静态博客的 GUI 工具。
 
