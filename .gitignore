@@ -1,6 +1,7 @@
 hugo.exe
-/public/.
+public/
 .hugo_build.lock
 resources/
 public/sitemap.xml
 public/about/
+public/tags/flask/index.xml
