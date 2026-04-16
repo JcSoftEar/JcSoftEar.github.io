@@ -56,7 +56,7 @@
     <div class="container">
       <h2 class="section-title">最新文章</h2>
       <div class="posts-grid">
-        {{ range first 3 (where .Site.RegularPages "Type" "blog") }}
+        {{ range first 3 ((where .Site.RegularPages "Type" "blog").ByDate.Reverse) }}
         <article class="post-card">
           <div class="post-meta">
             <span class="post-category">{{ .Params.category | default "技术" }}</span>

@@ -46,7 +46,7 @@
           <div class="widget">
             <h3 class="widget-title">热门文章</h3>
             <ul class="popular-posts">
-              {{ range first 5 (where .Site.RegularPages "Type" "blog") }}
+              {{ range first 5 ((where .Site.RegularPages "Type" "blog").ByDate.Reverse) }}
               <li>
                 <a href="{{ .RelPermalink }}">
                   <span class="rank">{{ .Date.Year }}</span>
@@ -71,7 +71,7 @@
           </div>
 
           <div class="posts-list" id="postsList">
-            {{ range where .Site.RegularPages "Type" "blog" }}
+            {{ range (where .Site.RegularPages "Type" "blog").ByDate.Reverse }}
             <article class="post-item" data-category="{{ .Params.category | default "tech" }}">
               <div class="post-date-badge">
                 <span class="month">{{ .Date.Format "Jan" }}</span>
@@ -108,7 +108,7 @@
           </div>
 
           <!-- 分页 -->
-          {{ $paginator := .Paginate (where .Site.RegularPages "Type" "blog") 10 }}
+          {{ $paginator := .Paginate ((where .Site.RegularPages "Type" "blog").ByDate.Reverse) 10 }}
           {{ if gt $paginator.TotalPages 1 }}
           <div class="pagination">
             {{ if $paginator.HasPrev }}
